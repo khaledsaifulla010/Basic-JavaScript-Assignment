@@ -17,6 +17,6 @@ function sortMaker(arr) {
         }
     }
 }
-const checkInputs = [4, 2];
+const checkInputs = [2, -4];
 const sortMakerResult = sortMaker(checkInputs);
 console.log(sortMakerResult);

@@ -1,31 +1,21 @@
-function findAddress(obj) {
-    const street = obj.street;
-    const house = obj.house;
-    const society = obj.society;
-    
-    return ` ${street}, ${house}, ${society}`;
-  }
-  
-  const givenAddress = {
-    street: '10',
-    house:'15A',
-    society: 'Earth Perfect'
-  };
-  const missingAddress1 = {
-    street: '10',
-    house: '__',
-    society: 'Earth Perfect'
-  }
-  const missingAddress2 = {
-    street: '10',
-    house: '__',
-    society: '__'
-  }
-  const findAddressResult = findAddress(givenAddress);
-  console.log(findAddressResult); 
+function findAddress(obj){
+  if(typeof obj !== "object"){
+      return "Invalid Object";
+  }else{
+      const street = obj.street || "__";
+      const house = obj.house || "__";
+      const society = obj.society || "__";
 
-  const missingAddressResult1 = findAddress(missingAddress1);
-  console.log(missingAddressResult1); 
+      return " "+street+", "+house+", "+society+" ";
+  }
 
-  const missingAddressResult2 = findAddress(missingAddress2);
-  console.log(missingAddressResult2);
+}
+
+const address = {
+  street : "10",
+  house : "15A",
+  society : "Earth Perfect"
+}
+
+console.log(findAddress(address));
+
